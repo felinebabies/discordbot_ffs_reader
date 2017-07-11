@@ -49,18 +49,4 @@ bot.command :ffs do |event, chapternum|
   voice_bot.play_file(mp3path)
 end
 
-bot.command(:connect) do |event|
-  channel = event.user.voice_channel
-
-  next "You're not in any voice channel!" unless channel
-
-  bot.voice_connect(channel)
-  "Connected to voice channel: #{channel.name}"
-end
-
-bot.command(:play_mp3) do |event|
-  voice_bot = event.voice
-  voice_bot.play_file('maou.mp3')
-end
-
 bot.run
